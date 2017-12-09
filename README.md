@@ -6,7 +6,9 @@ Save excel as csv file
 Continue with R
 
 monthcolum<-read.table("clipboard",header = T)  # save the month column as monthcolumn
+
 freqtable=as.data.frame(table(monthcolum$month))  # create frequency table
+
 newdata=transform(freqtable, percentage=100*(prop.table(Freq)))  # create percentage table
 
 sum(newdata$percentage)  # cross check
